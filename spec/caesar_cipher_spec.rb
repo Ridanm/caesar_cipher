@@ -14,12 +14,17 @@ RSpec.describe Code do
     it "when the displacement is negative?" do
       expect(code.caesar_cipher('az',-1)).to eq('zy')
     end
-  end
 
-  context "check the original text" do
-    code = Code.new
-    it "entered text" do
+    it "checking that the symbols do not change." do
+      expect(code.caesar_cipher('abz*:/?)', 2)).to eq('cdb*:/?)')
+    end
+
+    it "check the original     text" do
       expect(code.decipher).to eq(code.text)
+    end
+
+    it "if the displacement is greater than 10." do
+      expect(code.caesar_cipher('az', 12)).to eq('ml')
     end
   end
 end
