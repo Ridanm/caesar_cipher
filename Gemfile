@@ -2,5 +2,5 @@
 
 source "https://rubygems.org"
 
-# gem "rails"
-gem "rspec"
+gem 'rspec', '~> 3.13'
+gem 'rubocop', '~> 1.69', '>= 1.69.2'
