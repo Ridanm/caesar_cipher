@@ -4,9 +4,9 @@
 class Code
   attr_accessor :text, :range
 
-  def initialize
+  def initialize(text, range)
     @text = ''
-    @range = 0
+    @range = 1
     @ab_z = [*'a'..'z']
   end
 
