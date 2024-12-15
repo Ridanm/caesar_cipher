@@ -10,16 +10,12 @@ class Code
     @ab_z = [*'a'..'z']
   end
 
-  def caesar_cipher(text, range)
+  def caesar_cipher(text)
     @text = text
     pass = ''
 
     text.downcase.each_char do |char|
-      if verify_char(char)
-        pass << change_char(char, range)
-      else
-        pass << char
-      end
+      pass = veryfi_char(char) ? change_char(char) : char
     end
 
     pass
@@ -35,6 +31,7 @@ class Code
 
   def change_char(char, range)
     new_range = (@ab_z.index(char) + range) % 26
+
     give_me_back_char(new_range)
   end
 
