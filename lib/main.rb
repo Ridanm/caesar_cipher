@@ -3,20 +3,11 @@
 require 'colorize'
 require './caesar_cipher'
 
-puts 'This is a implementation of Caesar Cipher(Adz, 1)'
+puts 'This is a implementation of Caesar Cipher'.colorize(:magenta)
 
-phrase = Code.new
-puts phrase.caesar_cipher('Adz', 1)
-
-puts "\nEnter the text you want to encrypt"
-phrase = gets.chomp
-
-puts "\nEnter the displacement number"
+puts "\nIngrese el número que quiere para el desplazamiento en el alfabeto (Enter the number you want to offset in the alphabet.)"
 key = gets.chomp.to_i
 
-puts "\nCipher text"
-encrypting = Code.new
-
-puts "Cipher: #{encrypting.caesar_cipher(phrase, key)}"
-
-puts "Decipher: #{encrypting.decipher}"
+puts "\nIngrese el texto que quiere xifrar (Enter the text you want to encrypt)"
+phrase = gets.chomp.to_s
+encrypting = Code.new(phrase, key)
