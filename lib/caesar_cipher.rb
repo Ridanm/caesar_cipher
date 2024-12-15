@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
+# This class implements the changing of characters and their spaces to encrypt the entered string.
 class Code
-  attr_accessor :text, :range 
+  attr_accessor :text, :range
 
   def initialize
     @text = ''
@@ -18,12 +21,12 @@ class Code
         pass << char
       end
     end
-  
+
     pass
   end
 
   def verify_char(char)
-    @ab_z.include?(char.downcase) 
+    @ab_z.include?(char.downcase)
   end
 
   def give_me_back_char(ind)
@@ -37,7 +40,7 @@ class Code
 
   def decipher
     @text
-  end 
+  end
 
   private :change_char, :give_me_back_char, :verify_char
 end

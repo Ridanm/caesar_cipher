@@ -1,8 +1,11 @@
-require './caesar_cipher.rb'
+# frozen_string_literal: true
 
-puts "This is a implementation of Caesar Cipher(Adz, 1)"
+require 'colorize'
+require './caesar_cipher'
 
-phrase = Code.new 
+puts 'This is a implementation of Caesar Cipher(Adz, 1)'
+
+phrase = Code.new
 puts phrase.caesar_cipher('Adz', 1)
 
 puts "\nEnter the text you want to encrypt"
