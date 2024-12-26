@@ -7,20 +7,20 @@ class Code
   def initialize(text, range = 1)
     @text = text
     @range = range
-    @ab_z = [*'a'..'z']
+    @ab_z = [*'a'..'z'] + [*'A'..'Z']
     @orig = text
   end
 
   def caesar_cipher
     pass = ''
-    @text.downcase.each_char do |char|
-      pass = veryfi_char(char) ? change_char(char) : char
+    @text.each_char do |char|
+      pass += verify_char(char) ? change_char(char, @range) : char
     end
     pass
   end
 
   def verify_char(char)
-    @ab_z.include?(char.downcase)
+    @ab_z.include?(char)
   end
 
   def give_me_back_char(ind)
