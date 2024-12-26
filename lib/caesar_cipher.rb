@@ -4,20 +4,18 @@
 class Code
   attr_accessor :text, :range
 
-  def initialize(text, range)
-    @text = ''
-    @range = 1
+  def initialize(text, range = 1)
+    @text = text
+    @range = range
     @ab_z = [*'a'..'z']
+    @orig = text
   end
 
-  def caesar_cipher(text)
-    @text = text
+  def caesar_cipher
     pass = ''
-
-    text.downcase.each_char do |char|
+    @text.downcase.each_char do |char|
       pass = veryfi_char(char) ? change_char(char) : char
     end
-
     pass
   end
 
@@ -31,12 +29,11 @@ class Code
 
   def change_char(char, range)
     new_range = (@ab_z.index(char) + range) % 26
-
     give_me_back_char(new_range)
   end
 
   def decipher
-    @text
+    @orig
   end
 
   private :change_char, :give_me_back_char, :verify_char
