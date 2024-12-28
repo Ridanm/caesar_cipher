@@ -12,4 +12,4 @@ print Presentation.show('text')
 phrase = gets.chomp.to_s
 
 phrase_key = Code.new(phrase, key)
-puts Presentation.show('encryption'), phrase_key.caesar_cipher
+print Presentation.show('encryption'), phrase_key.caesar_cipher, "\n"
