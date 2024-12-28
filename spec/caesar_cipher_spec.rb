@@ -4,9 +4,9 @@ require '../lib/caesar_cipher'
 
 RSpec.describe Code do
   context 'checking text offset' do
-    code = Code.new
+    code = Code.new(:text, :range)
     it 'moving 1 position.' do
-      expect(code.caesar_cipher('ab', 1)).to eq('bc')
+      expect(code.caesar_cipher('ab', 1)).to eq('bc1')
     end
 
     it 'when should you go back to the beginning of the alphabet? z to a' do
